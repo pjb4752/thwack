@@ -1,3 +1,13 @@
+module String = struct
+  include String
+
+let to_chars s =
+  let rec to_chars' i chars =
+    if i < 0 then chars
+    else to_chars' (i - 1) (s.[i] :: chars) in
+  to_chars' (String.length s - 1) []
+end
+
 module List = struct
   include List
 
