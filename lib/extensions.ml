@@ -6,6 +6,11 @@ let to_chars s =
     if i < 0 then chars
     else to_chars' (i - 1) (s.[i] :: chars) in
   to_chars' (String.length s - 1) []
+
+let append_char str chr = str ^ String.make 1 chr
+
+let from_chars chars =
+  List.fold_left append_char "" chars
 end
 
 module List = struct
