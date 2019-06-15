@@ -4,7 +4,7 @@ module Read_list = Thwack.Read_list
 
 let suite =
   "Read_list suite">::: [
-    "from_string of single-line string">:: (fun context ->
+    "from_string of single-line string">:: (fun _ ->
       let read_list = Read_list.from_string "cat" in
       assert_equal read_list [
         { value = 'c'; line_num = 1; char_num = 1 };
@@ -13,7 +13,7 @@ let suite =
       ]
     );
 
-    "from_string of multi-line string">:: (fun context ->
+    "from_string of multi-line string">:: (fun _ ->
       let read_list = Read_list.from_string "cat\npow" in
       assert_equal read_list [
         { value = 'c';  line_num = 1; char_num = 1 };

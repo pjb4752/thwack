@@ -1,7 +1,0 @@
-(executables
-  ((names (tests))
-   (libraries (thwack ounit))))
-
-(alias
-  ((name runtest)
-   (action (run ./tests.exe))))

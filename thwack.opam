@@ -7,5 +7,5 @@ homepage: "https://github.com/pjb4752/thwack"
 bug-reports: "https://github.com/pjb4752/thwack/issues"
 dev-repo: "https://github.com/pjb4752/thwack.git"
 build: [
-  ["jbuilder" "build" "--only" "thwack" "--root" "." "-j" jobs "@install"]
+  ["dune" "build" "--only" "thwack" "--root" "." "-j" jobs "@install"]
 ]
