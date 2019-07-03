@@ -1,11 +1,12 @@
 opam-version: "1.2"
 name: "thwack"
+synopsis: "Utility library for flop compiler"
 version: "0.0.1"
 maintainer: "pjb4752 <pjb4752@gmail.com>"
 authors: "pjb4752 <pjb4752@gmail.com>"
 homepage: "https://github.com/pjb4752/thwack"
 bug-reports: "https://github.com/pjb4752/thwack/issues"
-dev-repo: "https://github.com/pjb4752/thwack.git"
+dev-repo: "git://github.com/pjb4752/thwack.git"
 build: [
   ["dune" "build" "--only" "thwack" "--root" "." "-j" jobs "@install"]
 ]
