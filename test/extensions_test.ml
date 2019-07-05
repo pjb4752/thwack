@@ -2,6 +2,8 @@ open OUnit2
 
 open Thwack.Extensions
 
+module StrMap = Map.Make(String)
+
 let suite =
   "Extensions suite">::: [
     "String.to_chars">::
@@ -17,5 +19,16 @@ let suite =
     "List.as_pairs">::
       (fun _ ->
         assert_equal (List.as_pairs [1; 2; 3; 4]) [(1, 2); (3, 4)]
+      );
+
+    "Map.find_else when key exists">::
+      (fun _ ->
+        let map = StrMap.add "key" "value" StrMap.empty in
+        assert_equal (StrMap.find_else "key" "else" map) "value"
+      );
+
+    "Map.find_else on else condition">::
+      (fun _ ->
+        assert_equal (StrMap.find_else "key" "else" StrMap.empty) "else"
       );
   ]
