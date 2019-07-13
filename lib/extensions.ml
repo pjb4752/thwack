@@ -29,6 +29,9 @@ module List = struct
     | [] -> []
     | f :: n :: tl -> (f, n) :: as_pairs tl
     | _ -> assert false
+
+  let zip left right =
+    List.fold_left2 (fun acc l r -> (l, r) :: acc) [] left right |> List.rev
 end
 
 module Map = struct
