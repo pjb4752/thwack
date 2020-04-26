@@ -1,6 +1,9 @@
 module String = struct
   include String
 
+let sub_from s i =
+  String.sub s i @@ String.length s - i
+
 let to_chars s =
   let rec to_chars' i chars =
     if i < 0 then chars

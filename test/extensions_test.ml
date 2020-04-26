@@ -6,6 +6,16 @@ module StrMap = Map.Make(String)
 
 let suite =
   "Extensions suite">::: [
+    "String.sub_from from first position">::
+      (fun _ ->
+        assert_equal (String.sub_from "hello" 0) "hello"
+      );
+
+    "String.sub_from from non-first position">::
+      (fun _ ->
+        assert_equal (String.sub_from "whatisthis" 5) "sthis"
+      );
+
     "String.to_chars">::
       (fun _ ->
         assert_equal (String.to_chars "abc") ['a'; 'b'; 'c']
