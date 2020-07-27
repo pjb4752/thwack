@@ -22,6 +22,9 @@ module List = struct
 
   let zip left right =
     List.fold_left2 (fun acc l r -> (l, r) :: acc) [] left right |> List.rev
+
+  let inspect fn l =
+    sprintf "[%s]" @@ String.concat "; " @@ List.map fn l
 end
 
 module Map = struct

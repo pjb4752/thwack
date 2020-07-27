@@ -21,6 +21,11 @@ let suite =
         assert_equal [(1, 4); (2, 5); (3, 6)] (List.zip [1; 2; 3] [4; 5; 6])
       );
 
+    "List.inspect">::
+      (fun _ ->
+        assert_equal "[1; 2; 3]" (List.inspect string_of_int [1; 2; 3;])
+      );
+
     "Map.find_else when key exists">::
       (fun _ ->
         let map = StrMap.add "key" "value" StrMap.empty in
